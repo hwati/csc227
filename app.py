@@ -6,7 +6,7 @@ Created on Tue Nov 29 12:42:36 2022
 """
 
 from flask import Flask, render_template, request, render
-app=Flask(__name__)
+app=Flask(__name__, tempate_folder="Templates")
 
 """ this Function render the home page"""
 @app.route("/", methods=["GET","POST"])
@@ -36,4 +36,4 @@ def home():
                            
 if __name__ =="__main__" :
     
-        app.run(host='0.0.0.0', port=8080)
+        app.run(host='localhost', port=8080)
