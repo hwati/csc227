@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi8/python-39:latest
 WORKDIR /deployment
  
 COPY app.py /deployment
-COPY templates/* /deployment/templates/
+COPY Templates/* /deployment/Templates/
 COPY requirements.txt /deployment
  
 RUN pip3 install -r requirements.txt
