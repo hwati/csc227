@@ -5,7 +5,7 @@ Created on Tue Nov 29 12:42:36 2022
 @author: Hagar
 """
 
-from flask import Flask, render_template, request, render
+from flask import Flask, render_template, request
 app=Flask(__name__, tempate_folder="Templates")
 
 """ this Function render the home page"""
