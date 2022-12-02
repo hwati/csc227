@@ -6,7 +6,7 @@ Created on Tue Nov 29 12:42:36 2022
 """
 
 from flask import Flask, render_template, request
-app=Flask(__name__, tempate_folder="Templates")
+app=Flask(__name__, template_folder="Templates")
 
 """ this Function render the home page"""
 @app.route("/", methods=["GET","POST"])
