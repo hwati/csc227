@@ -5,7 +5,7 @@ Created on Tue Nov 29 12:42:36 2022
 @author: Hagar
 """
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, render
 app=Flask(__name__)
 
 """ this Function render the home page"""
@@ -27,11 +27,11 @@ def home():
             #Calculate Total 
             price= (sizeValue * quantity)
             total=price+(price*0.06)
-            return render_template("Yourorder.html").format(name=name,size=size,quantity=quantity,total=total,crema=crema)
+            return render("Yourorder.html").format(name=name,size=size,quantity=quantity,total=total,crema=crema)
         
     else:    
         
-            return render_template("home.html")
+            return render("home.html")
                            
                            
 if __name__ =="__main__" :
