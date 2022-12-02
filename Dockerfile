@@ -1,14 +1,17 @@
-FROM python:3
-RUN mkdir/application
-WORKDIR /application
-COPY requirments.tx .
-RUN pip install -r requirments.txt
+# start by pulling the python image
+FROM python:3.8-alpine
 
-COPY ..
+# copy the requirements file into the image
+COPY ./requirements.txt /app/requirements.txt
 
-ENV PYTHONNUMBUFFERED 1
+# switch working directory
+WORKDIR /app
 
-EXPOSE 8001
-STOPSIGNAL SIGINT
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+# install the dependencies and packages in the requirements file
+RUN pip install -r requirements.txt
+
+# copy every content from the local file to the image
+COPY . /app
+
+# configure the container to run in an executed manner
+ENTRYPOINT [ "python" ]
