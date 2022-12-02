@@ -1,9 +1,9 @@
 FROM registry.access.redhat.com/ubi8/python-39:latest
  
-WORKDIR /deployment
+WORKDIR /app
  
-COPY app.py /deployment
-COPY Templates/* /deployment/Templates/
+
+COPY Templates/* /app/Templates/
 COPY requirements.txt /deployment
  
 RUN pip3 install -r requirements.txt
