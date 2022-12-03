@@ -5,7 +5,7 @@ Created on Tue Nov 29 12:42:36 2022
 @author: Hagar
 """
 
-from flask import Flask, render_template, request, send_file,rdirect,url_for,Response, redirect
+from flask import Flask, render_template, request, send_file,redirect,url_for,Response, redirect
 app=Flask(__name__,static_folder="static", template_folder="Templates")
 import sys
 import os
@@ -13,7 +13,7 @@ import os
 """ this Function render the home page"""
 @app.route("/", methods=["GET","POST"])
 def home():
-    importos
+    import os
     if request.method =="POST":
             name=request.form.get("name")
             size= float(request.form.get("size"))
