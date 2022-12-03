@@ -4,6 +4,7 @@ FROM python:3.8-alpine
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 
+
 # switch working directory
 WORKDIR /app
 
@@ -13,6 +14,8 @@ RUN pip install -r requirements.txt
 
 # copy every content from the local file to the image
 COPY . /app
+COPY . /Yourorder.html /app/Templates/Yourorder.html
+COPY . /home.html /app/Templates/home.html
 
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
