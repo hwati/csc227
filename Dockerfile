@@ -1,19 +1,16 @@
 
 FROM python:3.8-alpine
+RUN mkdir/application
+WORKDIR /application
 
 # copy the requirements file into the image
-COPY ./requirements.txt /app/requirements.txt
-COPY ./Yourorder.html /app/Templates/Yourorder.html
-COPY ./home.html /app/Templates/home.html
-
-# switch working directory
-WORKDIR /app
-
-# install the dependencies and packages in the requirements file
+COPY requirments.txt .
 RUN pip install -r requirements.txt
 
-# copy every content from the local file to the image
-COPY . /app
+COPY . .l
+
+ENV PYTHONUNBUFFERED 1
+EXPOSE 8080
 
 
 # configure the container to run in an executed manner
