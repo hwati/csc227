@@ -5,16 +5,20 @@ FROM python:3.8-alpine
 COPY ./requirements.txt /app/requirements.txt
 
 # switch working directory
-WORKDIR /app
-
+#WORKDIR /app
+WORKDIR /deployment
+COPY app.py
+COPY Templates/* /deployment/Template
+COPY requirements.txt /deployment
 # install the dependencies and packages in the requirements file
 RUN pip install -r requirements.txt
 
 # copy every content from the local file to the image
-COPY . /app
-COPY . .
+#COPY . /app
+#COPY . .
 
 EXPOSE 8080
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
-CMD [ "app.py" ]
+#CMD [ "app.py" ]
+CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
