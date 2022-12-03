@@ -6,7 +6,7 @@ Created on Tue Nov 29 12:42:36 2022
 """
 
 from flask import Flask, render_template, request, send_file,redirect,url_for,Response, redirect
-app=Flask(__name__,static_folder="static", template_folder="Templates")
+app=Flask(__name__)
 import sys
 import os
 
@@ -39,4 +39,4 @@ def home():
                            
 if __name__ =="__main__" :
     
-        app.run(host='localhost', port=8001)
+        app.run(host='localhost', port=8080)
