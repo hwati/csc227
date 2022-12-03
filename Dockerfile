@@ -2,14 +2,14 @@
 FROM python:3.8-alpine
 
 # copy the requirements file into the image
-COPY ./requirements.txt /app/requirements.txt
+#COPY ./requirements.txt /app/requirements.txt
 
 # switch working directory
 #WORKDIR /app
 WORKDIR /deployment
-COPY app.py
-COPY Templates/* /deployment/Template
-COPY requirements.txt /deployment
+COPY ./app.py
+COPY ./Templates/* /deployment/Template
+COPY ./requirements.txt /deployment
 # install the dependencies and packages in the requirements file
 RUN pip install -r requirements.txt
 
