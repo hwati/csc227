@@ -12,8 +12,8 @@ RUN pip install -r requirements.txt
 
 # copy every content from the local file to the image
 COPY . /app
-COPY ./Yourorder.html /app/templates/Yourorder.html
-COPY ./home.html /app/templates/home.html
+COPY ./Yourorder.html 
+COPY ./home.html 
 
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
