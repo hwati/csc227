@@ -5,15 +5,15 @@ Created on Tue Nov 29 12:42:36 2022
 @author: Hagar
 """
 
-from flask import Flask, render_template, request, send_file,redirect,url_for,Response, redirect
+from flask import Flask, render_template, request
 flask_test=Flask(__name__)
-import sys
-import os
+
+
 
 """ this Function render the home page"""
-@app.route("/", methods=["GET","POST"])
+@flask_test.route("/", methods=["GET","POST"])
 def home():
-    import os
+    
     if request.method =="POST":
             name=request.form.get("name")
             size= float(request.form.get("size"))
@@ -39,4 +39,4 @@ def home():
                            
 if __name__ =="__main__" :
     
-        flask_test.run(host='localhost', port=8080)
+        flask_test.run(host='0.0.0.0', port=8080)
