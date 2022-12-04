@@ -5,8 +5,8 @@ FROM python:3.8-alpine
 COPY ./requirements.txt /app/requirements.txt
 
 # copy the html files into a new templates folder
-COPY ./Yourorder.html /app/templates/Yourorder.html
-COPY ./home.html /app/templates/home.html
+COPY ./templates/Yourorder.html /app/templates/Yourorder.html
+COPY ./templates/home.html /app/templates/home.html
 
 # switch working directory
 WORKDIR /app
